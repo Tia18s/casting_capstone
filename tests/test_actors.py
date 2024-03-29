@@ -69,7 +69,8 @@ class ActorsTestCase(unittest.TestCase):
         self.assertTrue(json.loads(response.data.decode(
             'utf8').replace("'", '"'))['success'])
 
-    # Test for error behavior when required fields are missing during actor creation
+    # Test for error behavior when required fields are missing during actor
+    # creation
     def test_create_actor_error_missing_fields(self):
         """Test error behavior when required fields are missing during actor creation."""
         new_actor_data = {'age': 35, 'gender': 'Male'}

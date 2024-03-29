@@ -46,7 +46,8 @@ def setupControllers(appContext):
             object: A JSON response indicating a bad request error.
         """
         if not error:
-            return jsonify({'error': 'Bad Request', 'message': 'The request cannot be fulfilled due to bad syntax or missing required data'}), 400
+            return jsonify(
+                {'error': 'Bad Request', 'message': 'The request cannot be fulfilled due to bad syntax or missing required data'}), 400
         else:
             return jsonify({'error': 'Bad Request', 'message': error}), 400
 
@@ -61,7 +62,8 @@ def setupControllers(appContext):
         Returns:
             object: A JSON response indicating an unauthorized error.
         """
-        return jsonify({'error': 'Unauthorized', 'message': 'Authorization header is missing or invalid'}), 401
+        return jsonify({'error': 'Unauthorized',
+                       'message': 'Authorization header is missing or invalid'}), 401
 
     # Custom error handler for 403 Forbidden
     @app.errorhandler(403)
@@ -74,7 +76,8 @@ def setupControllers(appContext):
         Returns:
             object: A JSON response indicating a forbidden error.
         """
-        return jsonify({'error': 'Forbidden', 'message': 'You do not have permission to access this resource'}), 403
+        return jsonify(
+            {'error': 'Forbidden', 'message': 'You do not have permission to access this resource'}), 403
 
     # Custom error handler for 404 Not Found
     @app.errorhandler(404)
@@ -90,8 +93,9 @@ def setupControllers(appContext):
         if error and isinstance(error, str):
             return jsonify({'error': 'Not Found', 'message': error}), 404
         else:
-            return jsonify({'error': 'Not Found', 'message': 'The requested resource was not found'}), 404
-            
+            return jsonify(
+                {'error': 'Not Found', 'message': 'The requested resource was not found'}), 404
+
     # Custom error handler for 500 Internal Server Error
     @app.errorhandler(500)
     def internal_server_error(error):
@@ -103,7 +107,8 @@ def setupControllers(appContext):
         Returns:
             object: A JSON response indicating an internal server error.
         """
-        return jsonify({'error': 'Internal Server Error', 'message': 'An unexpected error occurred'}), 500
+        return jsonify({'error': 'Internal Server Error',
+                       'message': 'An unexpected error occurred'}), 500
 
     # GET request to retrieve all actors
     @app.route('/actors', methods=['GET'])
@@ -171,7 +176,8 @@ def setupControllers(appContext):
             if actor:
                 db.session.delete(actor)
                 db.session.commit()
-                return jsonify({'success': True, 'message': f'Actor {actor_id} deleted'})
+                return jsonify({'success': True,
+                                'message': f'Actor {actor_id} deleted'})
             else:
                 return not_found('Actor not found')
         except Exception as e:
@@ -198,7 +204,8 @@ def setupControllers(appContext):
             if movie:
                 db.session.delete(movie)
                 db.session.commit()
-                return jsonify({'success': True, 'message': f'Movie {movie_id} deleted'})
+                return jsonify({'success': True,
+                                'message': f'Movie {movie_id} deleted'})
             else:
                 return not_found('Movie not found')
         except Exception as e:

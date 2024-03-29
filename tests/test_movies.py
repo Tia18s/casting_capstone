@@ -69,7 +69,8 @@ class MoviesTestCase(unittest.TestCase):
         self.assertTrue(json.loads(response.data.decode(
             'utf8').replace("'", '"'))['success'])
 
-    # Test for error behavior when required fields are missing during movie creation
+    # Test for error behavior when required fields are missing during movie
+    # creation
     def test_create_movie_error_missing_fields(self):
         """Test error behavior when required fields are missing during movie creation."""
         new_movie_data = {'release_date': '2025-01-01'}

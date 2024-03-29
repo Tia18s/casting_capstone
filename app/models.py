@@ -25,7 +25,11 @@ class Movie(db.Model):
     title = db.Column(db.String(128), nullable=False)
     release_date = db.Column(db.Date, nullable=False)
     actors = db.relationship(
-        'Actor', secondary='movie_actors', backref=db.backref('movies', lazy=True))
+        'Actor',
+        secondary='movie_actors',
+        backref=db.backref(
+            'movies',
+            lazy=True))
 
     def __repr__(self):
         return f'<Movie {self.title}>'
