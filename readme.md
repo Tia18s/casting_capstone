@@ -21,12 +21,13 @@ The application uses Auth0 for authentication. To set up authentication and test
    - Set the following environment variables with your Auth0 details:
      - `AUTH0_DOMAIN`: Your Auth0 domain.
      - `API_AUDIENCE`: Your API Audience.
+     - `AUTH0_CLIENT_ID`: Your Application Client ID
 
-3. **Login Method: <a id="login"></a>**
+3. **Login Method: <a name="login" id="login"></a>**
    - Use the following link to access application using Auth0 login method to generate JWT tokens.
 
     ```
-    https://{{YOUR_DOMAIN}}/authorize?audience={{API_IDENTIFIER}}&response_type=token&client_id={{YOUR_CLIENT_ID}}&redirect_uri={{YOUR_CALLBACK_URI}}
+    https://{{YOUR_DOMAIN}}/authorize?audience={{API_AUDIENCE}}&response_type=token&client_id={{YOUR_CLIENT_ID}}&redirect_uri={{YOUR_CALLBACK_URI}}
     ```
   - For the current deployed application you can use:
     1. url to login:
@@ -111,7 +112,7 @@ Following permissions should be created under created API settings.
    - Execute the `run.sh` script to start the development server.
 
 
-# Database Migrations <a name="data-migrations"></a>
+# Database Migrations <a name="data-migrations" id="data-migrations"></a>
 
 ## Prerequisites
 Make sure you have Flask-Migrate installed in your virtual environment. If not, you can install it using pip:
@@ -393,7 +394,7 @@ These commands will help you manage your database migrations effectively when ma
   }
   ```
 
-## Using Postman Collection <a name="postman-collections"></a>
+## Using Postman Collection <a name="postman-collections" id="postman-collections"></a>
 - The repository contains 3 different collection for each role, with automated tests written to verify all the endpoints. The different collections are:
 1. `Casting Assistant Actor-Movie CRUD with RBAC Tests.postman_collection.json`
 2. `Casting Director Actor-Movie CRUD with RBAC Tests.postman_collection.json`
