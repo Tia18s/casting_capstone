@@ -1,0 +1,56 @@
+-- Drop existing movie_actor mapping table
+DROP TABLE IF EXISTS movie_actor CASCADE;
+
+-- Drop existing movie table
+DROP TABLE IF EXISTS movie CASCADE;
+
+-- Drop existing actor table
+DROP TABLE IF EXISTS actor CASCADE;
+
+-- Create actor table
+CREATE TABLE IF NOT EXISTS actor (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    age INTEGER NOT NULL,
+    gender VARCHAR(20) NOT NULL
+);
+
+-- Create movie table
+CREATE TABLE IF NOT EXISTS movie (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(120) NOT NULL,
+    release_date DATE NOT NULL
+);
+
+-- Create movie_actor mapping table without foreign key constraint
+CREATE TABLE IF NOT EXISTS movie_actor (
+    movie_id INTEGER,
+    actor_id INTEGER,
+    PRIMARY KEY (movie_id, actor_id)
+);
+
+-- Insert sample actors with hardcoded IDs starting from 350
+INSERT INTO actor (id, name, age, gender) VALUES
+(350, 'Tom Hanks', 65, 'Male'),
+(351, 'Meryl Streep', 72, 'Female'),
+(352, 'Leonardo DiCaprio', 47, 'Male'),
+(353, 'Scarlett Johansson', 37, 'Female'),
+(354, 'Brad Pitt', 58, 'Male');
+
+-- Insert sample movies with hardcoded IDs starting from 350
+INSERT INTO movie (id, title, release_date) VALUES
+(350, 'Forrest Gump', '1994-07-06'),
+(351, 'The Shawshank Redemption', '1994-09-23'),
+(352, 'The Godfather', '1972-03-24'),
+(353, 'The Dark Knight', '2008-07-18'),
+(354, 'Pulp Fiction', '1994-10-14'),
+(355, 'Schindler''s List', '1993-12-15');
+
+-- Insert sample movie_actor mappings
+INSERT INTO movie_actor (movie_id, actor_id) VALUES
+(350, 350), -- Forrest Gump: Tom Hanks
+(351, 354), -- The Shawshank Redemption: Brad Pitt
+(352, 352), -- The Godfather: Leonardo DiCaprio
+(353, 353), -- The Dark Knight: Scarlett Johansson
+(354, 351), -- Pulp Fiction: Meryl Streep
+(355, 350); -- Schindler's List: Tom Hanks
