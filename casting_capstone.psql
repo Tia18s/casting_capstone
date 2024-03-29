@@ -1,4 +1,4 @@
--- Drop existing movie_actor mapping table
+-- Drop existing movie_actors mapping table
 DROP TABLE IF EXISTS movie_actor CASCADE;
 
 -- Drop existing movie table
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS movie (
 );
 
 -- Create movie_actor mapping table without foreign key constraint
-CREATE TABLE IF NOT EXISTS movie_actor (
+CREATE TABLE IF NOT EXISTS movie_actors (
     movie_id INTEGER,
     actor_id INTEGER,
     PRIMARY KEY (movie_id, actor_id)
@@ -47,7 +47,7 @@ INSERT INTO movie (id, title, release_date) VALUES
 (355, 'Schindler''s List', '1993-12-15');
 
 -- Insert sample movie_actor mappings
-INSERT INTO movie_actor (movie_id, actor_id) VALUES
+INSERT INTO movie_actors (movie_id, actor_id) VALUES
 (350, 350), -- Forrest Gump: Tom Hanks
 (351, 354), -- The Shawshank Redemption: Brad Pitt
 (352, 352), -- The Godfather: Leonardo DiCaprio
