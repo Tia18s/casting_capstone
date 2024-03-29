@@ -394,12 +394,12 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:5000",
+			"value": "https://casting-capstone.onrender.com",
 			"type": "string"
 		},
 		{
 			"key": "jwt_token",
-			"value": "YOUR_JWT_TOKEN_HERE",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVOZkxXa2hKZTZfSzF5TDhFRVBHWiJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGEtZnNuZC51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjYwNDE2MmYxNTRjMmZmNTlkODQ5MWQ5IiwiYXVkIjoiY2FzdGluZy1jYXBzdG9uZSIsImlhdCI6MTcxMTczNDE3MSwiZXhwIjoxNzExODIwNTcxLCJzY29wZSI6IiIsImF6cCI6Im1YQ2FyRHo5cG9CbVA3em5TZ1Q5MUtBMUVyanRsVlZFIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.ZOAjwefQzFQYWt6oZ_zGxLH_zRpkGBrxgSrHUGt0AnyGa6xmY2o5WIvWmeMB9zd5AXx2MOT9kiH7vo1rGLbtjQUM6f16ixKiLpqUawDY0vK4UUu6T8lP_GDm2eK-pBXIJ2r9xhvymmt7cd8lWAwPFiCR6YhiX3MaNHjJgJyVRApAQVCKDdVGnfJNAkEITlk3KvMMAZEiROpTMUYsa5Knob1jE4i8e79IbIMIMzvuC54AkMKEt22BmUYreZ4Jv3VNRrr_6vhyxCiTTUgySxZ15li3Uk3OLbej5-fr6qj4dyLFpJL5HEiv9AE5DsvQU7GTJsrVXOozRvseppnH6ThgNg",
 			"type": "string"
 		},
 		{
