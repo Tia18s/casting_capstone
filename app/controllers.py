@@ -17,7 +17,7 @@ def setupControllers(appContext):
     app = appContext
 
     @app.route('/', methods=['GET'])
-    def get_login_results():
+    def get_home():
         """Handle login results.
 
         Returns:
